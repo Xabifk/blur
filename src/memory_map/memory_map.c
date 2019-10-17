@@ -1,15 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "memory_map.h"
 
-
-struct memory_space
-{
-    long long unsigned start_address;
-    long long unsigned end_address;
-    short permissions;
-    char* name;
-};
 
 FILE* open_memory_map(unsigned pid)
 {
@@ -43,7 +36,7 @@ memory_space read_memory_map_line(FILE* memory_map)
     }
     else
     {
-        new_location.name = "None";
+        strcpy(new_location.name, "None");
     }
     
 
@@ -59,11 +52,10 @@ memory_space read_memory_map_line(FILE* memory_map)
     return new_location;
 }
 
-memory_space* read_memory_map(FILE* memory_map)
+memory_space* read_memory_map(FILE* memory_map, memory_space* memory_locations, unsigned size)
 {
-    memory_space* memory_locations = malloc(sizeof(memory_space) * 100);
 
-    for(int i = 0; i < 100 && feof(memory_map) == 0; i++)
+    for(int i = 0; i < size && feof(memory_map) == 0; i++)
     {
         memory_locations[i] = read_memory_map_line(memory_map);
         printf("%llx-%llx %d %s\n", memory_locations[i].start_address, memory_locations[i].end_address, memory_locations[i].permissions, memory_locations[i].name);
