@@ -3,7 +3,9 @@
 int main()
 {
     int x, command;
-    char s[40];
+    char s[100];
+
+    printf("%llx\n", &s);
 
     while(1)
     {
