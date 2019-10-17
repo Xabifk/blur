@@ -1,3 +1,9 @@
+# Directories
+bin/*
+
+obj/*
+
+
 # Prerequisites
 *.d
 
