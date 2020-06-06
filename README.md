@@ -1,2 +1,3 @@
-# memory-manipulation
-A little memory manipulation experiment in C.
+# Blur
+A Cheat Engine CLI clone.<br>
+Still heavily work in progress.
