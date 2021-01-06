@@ -1,9 +1,16 @@
 #include <stdio.h>
 #include <vector>
+#include <fstream>
 #include "../common.h"
 
 class MemorySegment
 {
+    private:
+
+    uint64_t start_address;
+    uint64_t end_address;
+    uint8_t permissions;
+    std::string name;
 
     public:
 
@@ -17,7 +24,11 @@ class MemoryInterface
         uint64_t pid;
         #ifdef OS_WIN
 
-        #else
+        #endif
+
+        #ifdef OS_UNIX
+            std::string file_name;
+            fstream file_stream;
 
         #endif
 

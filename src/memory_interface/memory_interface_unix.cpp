@@ -1,10 +1,11 @@
 #ifdef OS_UNIX
 #include "memory_interface.h"
-#include "memory_interface.h"
 
 MemoryInterface::MemoryInterface(uint64_t pid) 
 {
-    
+    this->pid = pid;
+
+    this->file_name = std::format("/proc/{}/mem", std::to_string(pid));
 }
     
 std::vector<MemorySegment> MemoryInterface::get_memory_segments() 
