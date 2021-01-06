@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <vector>
 
 FILE* open_process_memory(unsigned pid)
 {
