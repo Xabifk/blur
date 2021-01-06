@@ -4,3 +4,6 @@
 #else
 
 #endif
+
+
+#define log_error(a) printf("[ERROR] %s", (a))
