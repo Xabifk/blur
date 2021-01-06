@@ -12,6 +12,14 @@ class MemorySegment
 
 class MemoryInterface
 {
+    private:
+        uint64_t pid;
+        #ifdef OS_WIN
+
+        #else
+
+        #endif
+
     public:
 
     MemoryInterface(uint64_t pid);
