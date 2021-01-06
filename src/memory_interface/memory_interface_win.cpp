@@ -3,11 +3,12 @@
 
 MemoryInterface::MemoryInterface(uint64_t pid) 
 {
-    
+    this->pid = pid;
 }
     
 std::vector<MemorySegment> MemoryInterface::get_memory_segments() 
 {
+
 
 }
 

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <vector>
+#include "../common.h"
 
 class MemorySegment
 {
