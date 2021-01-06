@@ -5,11 +5,15 @@ MemoryInterface::MemoryInterface(uint64_t pid)
 {
     this->pid = pid;
 
-    this->file_name = std::format("/proc/{}/mem", std::to_string(pid));
+    file_name = std::format("/proc/{}/mem", std::to_string(pid));
+    file_stream.open(file_name, ios::in | ios::out | ios::binary)
 }
     
 std::vector<MemorySegment> MemoryInterface::get_memory_segments() 
 {
+    std::vector<MemorySegment> memory_segments;
+
+    
 
 }
 
